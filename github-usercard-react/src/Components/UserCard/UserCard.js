@@ -1,11 +1,23 @@
 import React from 'react'
+import axios from 'axios'
 
 class UserCard extends React.Component {
   constructor() {
     super()
     this.state = {
-      user: {}
+      user: {
+        name: 'cobrettie'
+      }
     }
+  }
+
+  componentDidMount() {
+    axios
+      .get(`https://api.github.com/users/${this.state.user.name}`)
+      .then(response => {
+        console.log(response)
+      })
+      .catch(err => console.log(err))
   }
 
   render() {
