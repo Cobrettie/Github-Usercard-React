@@ -27,6 +27,7 @@ class UserCard extends React.Component {
             // console.log(response)
             this.setState({followers: response.data})
           })
+          .catch(err => console.log(err))
       })
       .catch(err => console.log(err))
   }
@@ -37,7 +38,9 @@ class UserCard extends React.Component {
     return (
       <div>
         <h2>UserCard Component</h2>
-        <p>{this.state.user.login}</p>
+        <p>Name: {this.state.user.name}</p>
+        <p>Github Username: {this.state.user.login}</p>
+        <img src={this.state.user.avatar_url} />
       </div>
     )
   }
