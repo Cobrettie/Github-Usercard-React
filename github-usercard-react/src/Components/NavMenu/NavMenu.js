@@ -1,6 +1,6 @@
 import React from 'react'
 
-export const NavMenu = () => {
+const NavMenu = () => {
   return (
     <div>
       <nav>
@@ -9,3 +9,5 @@ export const NavMenu = () => {
     </div>
   )
 }
+
+export default NavMenu
