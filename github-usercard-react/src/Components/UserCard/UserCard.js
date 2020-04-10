@@ -5,22 +5,22 @@ class UserCard extends React.Component {
   constructor() {
     super()
     this.state = {
-      user: {
-        name: 'cobrettie'
-      }
+      user: {}
     }
   }
 
   componentDidMount() {
     axios
-      .get(`https://api.github.com/users/${this.state.user.name}`)
+      .get(`https://api.github.com/users/cobrettie`)
       .then(response => {
         console.log(response)
+        this.setState({user: response.data})
       })
       .catch(err => console.log(err))
   }
 
   render() {
+    console.log(this.state.user)
     return (
       <div>
         <h2>UserCard Component</h2>
