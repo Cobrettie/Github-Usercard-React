@@ -1,49 +1,56 @@
 import React from 'react'
 import axios from 'axios'
+import UserFollowers from '../UserFollowers/UserFollowers'
 
 class UserCard extends React.Component {
   constructor() {
     super()
     this.state = {
       user: {},
-      followers: []
+      followersUrl: ''
     }
   }
+
+    
 
   componentDidMount() {
     axios
       .get(`https://api.github.com/users/cobrettie`)
       .then(response => {
-        // console.log(response)
+        console.log(response)
         this.setState({user: response.data})
-        const userFollowers = response.data.followers_url
-        return userFollowers
+        this.setState({followersUrl: response.data.followers_url})
       })
-      .then(response => {
-        // console.log(response)
-        axios
-          .get(`${response}`)
-          .then(response => {
-            // console.log(response)
-            this.setState({followers: response.data})
-          })
-          .catch(err => console.log(err))
-      })
-      .catch(err => console.log(err))
   }
 
   render() {
-    console.log(this.state.user)
-    console.log(this.state.followers)
+    // console.log(this.state.user)
+    console.log(this.state.followersUrl)
+
     return (
       <div>
         <h2>UserCard Component</h2>
         <p>Name: {this.state.user.name}</p>
         <p>Github Username: {this.state.user.login}</p>
-        <img src={this.state.user.avatar_url} />
+        {/* <img src={this.state.user.avatar_url} alt={'User Avatar'} /> */}
+        <UserFollowers followersUrl={this.state.followersUrl} />
       </div>
     )
   }
 }
 
 export default UserCard
+
+
+
+// .then(response => {
+//         // console.log(response)
+//         axios
+//           .get(`${response}`)
+//           .then(response => {
+//             // console.log(response)
+//             this.setState({followers: response.data})
+//           })
+//           .catch(err => console.log(err))
+//       })
+//       .catch(err => console.log(err))
