@@ -25,6 +25,7 @@ class App extends React.Component {
         console.log('followers get request response', response)
         this.setState({followers: response.data})
       })
+      .catch(err => console.log(err))
   }
 
 
