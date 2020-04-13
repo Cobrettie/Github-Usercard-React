@@ -1,16 +1,16 @@
 import React from 'react';
+import axios from 'axios'
 import './App.css';
-import NavMenu from './Components/NavMenu/NavMenu';
-import UserCard from './Components/UserCard/UserCard';
 
-function App() {
-  return (
-    <div className="App">
-      <NavMenu />
-      <h1>Welcome To Your GitHub User Card, Built With React</h1>
-      <UserCard />
-    </div>
-  );
+
+class App extends React.Component {
+  render() {
+    return(
+      <div className='app'>
+
+      </div>
+    )
+  }
 }
 
 export default App;
