@@ -5,7 +5,7 @@ export default function UserCard(userData) {
   return(
     <div>
       <div>
-        <img src={userData.userData.avatar_url} />
+        <img src={userData.userData.avatar_url} alt='User Avatar' />
       </div>
 
       <div>
