@@ -17,7 +17,7 @@ class App extends React.Component {
     axios
       .get('https://api.github.com/users/Cobrettie')
       .then(response => {
-        console.log('initial user get req', response)
+        // console.log('initial user get req', response)
         this.setState({
           user: response.data,
           userIsLoaded: true
@@ -28,7 +28,7 @@ class App extends React.Component {
     axios
       .get('https://api.github.com/users/Cobrettie/followers')
       .then(response => {
-        console.log('followers get request response', response)
+        // console.log('followers get request response', response)
         this.setState({
           followers: response.data,
           followersAreLoaded: true
@@ -39,8 +39,8 @@ class App extends React.Component {
 
 
   render() {
-    console.log('render runnin', this.state.user)
-    console.log('render running2', this.state.followers)
+    // console.log('render runnin', this.state.user)
+    // console.log('render running2', this.state.followers)
     return(
       <div className='app'>
         {this.state.userIsLoaded ? <UserCard userData={this.state.user} /> : null}

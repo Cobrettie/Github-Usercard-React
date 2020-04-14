@@ -16,4 +16,5 @@ export const ImgContainerDiv = styled.div`
 export const StyledImg = styled.img`
   width: 300px;
   height: auto;
+  border-radius: 5px;
 `;

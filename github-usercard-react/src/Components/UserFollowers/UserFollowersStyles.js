@@ -22,4 +22,5 @@ export const FollowerCardDiv = styled.div`
 export const FollowerImg = styled.img`
   width: 60%;
   height: auto;
+  border-radius: 5px;
 `;
