@@ -10,7 +10,7 @@ export const MainContainerDiv = styled.div`
 `;
 
 export const ImgContainerDiv = styled.div`
-  padding: 0 20px;
+  padding: 20px;
 `;
 
 export const StyledImg = styled.img`
