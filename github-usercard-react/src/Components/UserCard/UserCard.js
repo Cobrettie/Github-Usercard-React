@@ -1,12 +1,13 @@
 import React from 'react'
+import { MainContainerDiv, ImgContainerDiv, StyledImg } from './UserCardStyles'
 
 export default function UserCard(userData) {
   // console.log('userData', userData)
   return(
-    <div>
-      <div>
-        <img src={userData.userData.avatar_url} alt='User Avatar' />
-      </div>
+    <MainContainerDiv>
+      <ImgContainerDiv>
+        <StyledImg src={userData.userData.avatar_url} alt='User Avatar' />
+      </ImgContainerDiv>
 
       <div>
         <p>Name: {userData.userData.name}</p>
@@ -19,6 +20,6 @@ export default function UserCard(userData) {
         <p>Bio: {userData.userData.bio}</p>
         {userData.userData.hireable === true ? <p>Hireable: Yes</p> : <p>Hireable: No</p>}
       </div>
-    </div>
+    </MainContainerDiv>
   )
 }
