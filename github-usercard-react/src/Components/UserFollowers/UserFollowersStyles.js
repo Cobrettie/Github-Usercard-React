@@ -2,6 +2,7 @@ import styled from 'styled-components'
 
 export const MainHeadingH2 = styled.h2`
   text-align: center;
+  font-size: 32px;
 `;
 
 export const MappedFollowersContainerDiv = styled.div`

@@ -3,6 +3,7 @@ import axios from 'axios'
 import './App.css'
 import UserCard from './Components/UserCard/UserCard'
 import UserFollowers from './Components/UserFollowers/UserFollowers'
+import GithubCalender from 'react-github-calender'
 
 
 class App extends React.Component {
@@ -45,6 +46,7 @@ class App extends React.Component {
       <div className='app'>
         {this.state.userIsLoaded ? <UserCard userData={this.state.user} /> : null}
         {this.state.followersAreLoaded ? <UserFollowers userFollowers={this.state.followers} /> : null}
+        <GithubCalender username='cobrettie' />
       </div>
     )
   }
