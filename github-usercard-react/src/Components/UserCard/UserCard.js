@@ -1,5 +1,6 @@
 import React from 'react'
-import { MainContainerDiv, ImgContainerDiv, StyledImg } from './UserCardStyles'
+import { MainContainerDiv, ImgContainerDiv, StyledImg, UserInfoContainerDiv, GithubCalendarContainerDiv } from './UserCardStyles'
+import GitHubCalendar from 'react-github-calendar';
 
 export default function UserCard(userData) {
   // console.log('userData', userData)
@@ -9,7 +10,7 @@ export default function UserCard(userData) {
         <StyledImg src={userData.userData.avatar_url} alt='User Avatar' />
       </ImgContainerDiv>
 
-      <div>
+      <UserInfoContainerDiv>
         <p>Name: {userData.userData.name}</p>
         <p>GitHub Handle: {userData.userData.login}</p>
         <p>Location: {userData.userData.location}</p>
@@ -19,7 +20,11 @@ export default function UserCard(userData) {
         <p>Following: {userData.userData.following}</p>
         <p>Bio: {userData.userData.bio}</p>
         {userData.userData.hireable === true ? <p>Hireable: Yes</p> : <p>Hireable: No</p>}
-      </div>
+      </UserInfoContainerDiv>
+
+      <GithubCalendarContainerDiv>
+        <GitHubCalendar username='cobrettie' />
+      </GithubCalendarContainerDiv>
     </MainContainerDiv>
   )
 }
